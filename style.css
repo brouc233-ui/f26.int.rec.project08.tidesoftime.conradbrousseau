@@ -1,0 +1,234 @@
+:root {
+  color-scheme: light;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  color: #12466d;
+  background: #e9f8ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 49%, rgba(116, 218, 243, 0.38), transparent 30rem),
+    linear-gradient(180deg, #f3fcff 0%, #dff5ff 100%);
+}
+
+.page {
+  width: min(940px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 48px 0 25px;
+}
+
+.intro {
+  text-align: center;
+}
+
+.eyebrow,
+.ocean,
+.current-place,
+.timezone,
+.clock-caption,
+footer {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #3582aa;
+  font-size: 13px;
+}
+
+.eyebrow span,
+footer span,
+.current-place span {
+  color: #39a9d1;
+}
+
+h1 {
+  margin: 4px 0 -7px;
+  color: #087fbd;
+  font-family: "Allura", cursive;
+  font-size: clamp(72px, 12vw, 112px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.name {
+  margin: 0;
+  color: #164b70;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.description {
+  margin: 7px 0 0;
+  color: #55809a;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.places {
+  margin: 37px auto 0;
+}
+
+.places h2 {
+  margin: 0 0 12px;
+  color: #4182a1;
+  font-family: "Allura", cursive;
+  font-size: 31px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.place-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.place {
+  min-height: 68px;
+  padding: 10px 6px;
+  border: 1px solid #b5dfef;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.5);
+  color: #2b6687;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.place:hover {
+  transform: translateY(-2px);
+  border-color: #47b6db;
+}
+
+.place.selected {
+  border-color: #168fc4;
+  background: #c9efff;
+  box-shadow: inset 0 0 0 1px rgba(22, 143, 196, 0.14);
+}
+
+.place:focus-visible {
+  outline: 2px solid #087fbd;
+  outline-offset: 3px;
+}
+
+.ocean,
+.place-name {
+  display: block;
+}
+
+.ocean {
+  color: #5291ad;
+  font-size: 10px;
+}
+
+.place-name {
+  margin-top: 3px;
+  color: #174e72;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.clock-section {
+  margin: 27px auto 0;
+  text-align: center;
+}
+
+.current-place {
+  margin: 0;
+  color: #3686a9;
+  font-size: 12px;
+}
+
+.time-readout {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 9px;
+  margin-top: 2px;
+  color: #12466d;
+  font-size: clamp(39px, 7vw, 52px);
+  font-variant-numeric: tabular-nums;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+#ampm {
+  color: #3982a4;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+}
+
+.timezone {
+  margin: 2px 0 0;
+  color: #57879f;
+  font-size: 11px;
+}
+
+#clock {
+  width: min(430px, 100%);
+  aspect-ratio: 1;
+  margin: 6px auto 0;
+}
+
+#clock canvas {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.clock-caption {
+  margin: 0;
+  color: #5790a9;
+  font-size: 11px;
+}
+
+footer {
+  margin-top: 26px;
+  color: #59849a;
+  font-size: 11px;
+  text-align: center;
+}
+
+@media (max-width: 620px) {
+  .page {
+    width: min(460px, calc(100% - 30px));
+    padding-top: 33px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+  }
+
+  .places {
+    margin-top: 26px;
+  }
+
+  .place-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .place:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .place {
+    min-height: 62px;
+  }
+
+  .clock-section {
+    margin-top: 24px;
+  }
+}

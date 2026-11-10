@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#e9f8ff">
+    <title>Tides of Time — Conrad Brousseau</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+    <script src="sketch.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="intro">
+        <p class="eyebrow">CORE 1: INTERACTIONS <span>·</span> NOVEMBER 2026</p>
+        <h1>Tides of Time</h1>
+        <p class="name">Conrad Brousseau</p>
+        <p class="description">A little ocean to watch the hours drift by.</p>
+      </header>
+
+      <section class="places" aria-labelledby="places-title">
+        <h2 id="places-title">Choose a shore</h2>
+        <div class="place-list">
+          <button class="place" type="button" data-zone="America/Los_Angeles" aria-pressed="false">
+            <span class="ocean">PACIFIC OCEAN</span>
+            <span class="place-name">California</span>
+          </button>
+          <button class="place selected" type="button" data-zone="America/New_York" aria-pressed="true">
+            <span class="ocean">ATLANTIC OCEAN</span>
+            <span class="place-name">New York</span>
+          </button>
+          <button class="place" type="button" data-zone="Europe/London" aria-pressed="false">
+            <span class="ocean">ATLANTIC OCEAN</span>
+            <span class="place-name">London</span>
+          </button>
+          <button class="place" type="button" data-zone="Indian/Maldives" aria-pressed="false">
+            <span class="ocean">INDIAN OCEAN</span>
+            <span class="place-name">Maldives</span>
+          </button>
+          <button class="place" type="button" data-zone="Asia/Tokyo" aria-pressed="false">
+            <span class="ocean">PACIFIC OCEAN</span>
+            <span class="place-name">Tokyo</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="clock-section" aria-label="Clock for the selected shore">
+        <p class="current-place" id="current-place">NEW YORK <span>·</span> ATLANTIC OCEAN</p>
+        <div class="time-readout" aria-live="off">
+          <span id="digital-time">--:--:--</span>
+          <span id="ampm">--</span>
+        </div>
+        <p class="timezone" id="timezone">EASTERN TIME</p>
+        <div id="clock" role="img" aria-label="Analog clock showing the selected local time"></div>
+        <p class="clock-caption">LET THE TIDE SET THE PACE</p>
+      </section>
+
+      <footer>CORE 1: INTERACTIONS <span>·</span> CONRAD BROUSSEAU <span>·</span> 2026</footer>
+    </main>
+  </body>
+</html>
